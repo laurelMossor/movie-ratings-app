@@ -68,7 +68,7 @@ class Rating(db.Model):
     user = db.relationship("User", back_populates="rating")
 
     def __repr__(self):
-        return f"<Rating: rating_id={self.rating_id}> score={self.score}>"
+        return f"<Rating: rating_id={self.rating_id} score={self.score}>"
 
 
 if __name__ == "__main__":
