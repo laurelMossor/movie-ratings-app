@@ -10,7 +10,16 @@
     {% block head %}{% endblock %}
   </head>
   <body>
-    {% block body %}{% endblock %}
+    <p>You are logged in as user_{{ session["current_user"] }}</p>
+
+    {% for msg in get_flashed_messages() %}
+    <p class="flash-msg">
+      {{ msg }}
+    </p>
+    {% endfor %}
+
+    {% block body %}
+    {% endblock %}
 
     {% block after_body %}{% endblock %}
   </body>

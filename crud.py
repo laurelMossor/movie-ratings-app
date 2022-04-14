@@ -47,6 +47,15 @@ def create_rating(user, movie, score):
 
     return rating
 
+def check_user_email(x_email):
+    
+    return User.query.filter(User.email == x_email).first()
+
+def get_user_password(x_email, x_password):
+
+    x_user = User.query.filter(User.email == x_email).first()   
+    return x_user.password
+
 
 
 if __name__ == '__main__':
