@@ -28,12 +28,25 @@ def return_all_movies():
 
     return list_of_movies
 
+def get_movie_by_id(x_movie_id):
+
+    return Movie.query.filter_by(movie_id=x_movie_id).one()
+
+def return_all_users():
+
+    return User.query.all()
+
+def get_user_profile(x_user_id):
+
+    return User.query.filter_by(user_id=x_user_id).one()
+
 def create_rating(user, movie, score):
     """Create and return a new rating."""
 
     rating = Rating(user=user, movie=movie, score=score)
 
     return rating
+
 
 
 if __name__ == '__main__':
